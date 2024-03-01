@@ -1,0 +1,151 @@
+a {
+  text-decoration: none; /* Відключення підкреслення */
+  color: white !important; /* Зміна кольору тексту на білий */
+}
+
+/* Стилі для відвіданих посилань */
+a:visited {
+  color: white !important; /* Зміна кольору відвіданих посилань на білий */
+}
+.sidebar-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.package-container {
+  border: 2px solid #ccc; /* Рамка контейнера */
+  padding: 10px; /* Відступ всередині контейнера */
+  margin-bottom: 20px; /* Відступ знизу між контейнерами */
+}
+
+.package-container h3 {
+  margin: 0; /* Видалення зовнішнього відступу для заголовка */
+}
+
+.inner-container {
+  background-color: #f9f9f9; /* Колір фону внутрішнього контейнера */
+  padding: 10px; /* Відступ всередині внутрішнього контейнера */
+}
+
+.inner-container h4 {
+  margin: 0; /* Видалення зовнішнього відступу для заголовків у внутрішньому контейнері */
+}
+
+/* Основні стилі для хедера */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #333; /* Колір фону хедера */
+  color: #fff; /* Колір тексту */
+  font-family: Arial, sans-serif; /* Шрифт тексту */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь */
+}
+
+/* Стилі для логотипу */
+.navbar .logo {
+  width: 50px; /* Задайте розмір логотипу за вашими потребами */
+  height: auto;
+  margin-right: 10px; /* Відступ зправа від логотипу */
+  margin-left: 45px;
+}
+
+/* Стилі для тексту заголовка */
+.navbar h1 {
+  margin: 0;
+  font-size: 24px; /* Розмір шрифту */
+  font-weight: bold; /* Товщина шрифту */
+}
+
+/* Стилі для блоку контактної інформації */
+.navbar .contact-info {
+  display: flex;
+  align-items: center;
+}
+
+/* Стилі для номеру телефону */
+.navbar .contact-info .phone-number {
+  margin-right: 10px; /* Відступ зправа */
+  font-size: 16px; /* Розмір шрифту */
+  color: #ccc; /* Колір тексту */
+}
+
+/* Стилі для посилання "Увійти" */
+.navbar .user-link {
+  text-decoration: none;
+  color: #fff; /* Колір тексту */
+  border-left: 1px solid #666; /* Вертикальна лінія */
+  padding-left: 10px; /* Відступ зліва */
+  margin-left: 10px; /* Відступ зліва */
+}
+
+/* Стилі при наведенні на посилання "Увійти" */
+.navbar .user-link:hover {
+  text-decoration: underline; /* Підкреслений текст при наведенні */
+}
+
+.sidebar {
+  position: fixed;
+  left: -200px;
+  top: 0;
+  height: 100%;
+  width: 200px;
+  background-color: rgba(51, 51, 51, 0.9); /* Прозорий чорний фон */
+  color: #fff;
+  transition: left 0.3s;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  font-size: 18px;
+}
+
+.sidebar ul li:hover {
+  background-color: #555;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.menu-trigger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100%;
+  background-color: rgba(51, 51, 51, 0.9);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  writing-mode: vertical-lr;
+  transform: rotate(-180deg);
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-items {
+  position: relative;
+  margin-top: 50px;
+}
+
+.menu-trigger.open {
+  position: absolute;
+  left: 0;
+}

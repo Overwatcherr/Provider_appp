@@ -1,0 +1,54 @@
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+  }
+</style>
+<body>
+  <div class="sidebar" id="sidebar">
+    <div class="back-button" onclick="toggleSidebar()">Назад</div>
+    <div class="menu-items">
+      <ul>
+        <li><a href="{% url 'home' %}">Домашня сторінка</a></li>
+        <li>
+          <a href="#" onclick="toggleSubMenu(event)">Пакети послуг</a>
+          <ul class="sub-menu" style="display: none">
+            {% for package in packages %}
+            <li>
+              <a href="{% url 'package-room' package.id %}"
+                >{{ package.name }}</a
+              >
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="{% url 'personal_office' %}">Про нас</a></li>
+        <li><a href="{% url 'logout' %}">Контакти</a></li>
+        <!-- Додайте додаткові пункти меню, якщо потрібно -->
+      </ul>
+    </div>
+  </div>
+  <div class="menu-trigger" onclick="toggleSidebar()">Меню</div>
+
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      var menuTrigger = document.querySelector(".menu-trigger");
+      var backButton = document.querySelector(".back-button");
+      sidebar.classList.toggle("open");
+      menuTrigger.classList.toggle("open"); // Додати цей рядок
+      menuTrigger.style.display = sidebar.classList.contains("open")
+        ? "none"
+        : "block";
+      backButton.style.display = sidebar.classList.contains("open")
+        ? "block"
+        : "none";
+    }
+    function toggleSubMenu(event) {
+      event.preventDefault();
+      var subMenu = event.target.nextElementSibling;
+      subMenu.style.display =
+        subMenu.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</body>

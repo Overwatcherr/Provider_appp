@@ -1,0 +1,22 @@
+{% load static %}
+
+<div class="navbar">
+  <!-- Логотип -->
+  <img src="{% static 'images/logoo.png' %}" alt="Логотип" class="logo" />
+
+  <!-- Заголовок -->
+  <a href="/">
+    <h1>SKyNet</h1>
+  </a>
+
+  <!-- Контактна інформація та посилання на вхід -->
+  <div class="contact-info">
+    <span class="phone-number">Номер телефону</span>
+    {% if request.user.is_authenticated %}
+    <p>{{request.user}}</p>
+    <a href="{% url 'logout' %}">/ Вийти</a>
+    {% else %}
+    <a href="{% url 'login' %}"> Ввійти</a>
+    {% endif %}
+  </div>
+</div>
